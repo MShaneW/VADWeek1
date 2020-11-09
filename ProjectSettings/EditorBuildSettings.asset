@@ -5,9 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: d1c3109bdb54ad54c8a2b2838528e640
+  - enabled: 1
+    path: Assets/Scenes/VR_Bowling.unity
+    guid: b2f0c783b82098c4da28e6e381cbc412
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 895bf958c512c0d49bc4a28777462368,
       type: 2}
