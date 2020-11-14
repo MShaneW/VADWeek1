@@ -48,7 +48,7 @@ public class BowlingBall : MonoBehaviour
             gameManager._ballCount--;
 
             Debug.Log(transform.position + "xmin:"+bminx + "/xmax:" + bmaxx + ";ymin:" + bminy + "/ymax:" + bmaxy + ";zmin:" + bminz + "/zmax:" + bmaxz);
-            
+
             GameObject.Destroy(this);
             //transform.position = startPOS;
             
