@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 
 {
     public bool _isGameOver = false;
-    public int _ballCount = 3;
+    public int _ballCount = 6;
     public int _pinCount = 10;
     public int _currentFrame = 0;
     public int _currentBall = 0;
@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
         if (_ballCount < 1)
         {
             //instantiate new set of balls
+            //Debug.Log("Out of Balls");
 
         }
     }
@@ -41,6 +42,7 @@ public class GameManager : MonoBehaviour
         if (_pinCount < 1 | _isFrameOver)
         {
             //instantiate new set of pins
+            Debug.Log("All Pins Down");
         }
     }
 

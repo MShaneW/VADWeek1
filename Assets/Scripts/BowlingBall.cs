@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BowlingBall : MonoBehaviour
 {
-    private Vector3 startPOS;
+    private Vector3 startPOS; //record balls starting position
     private float xMin = -3.5f;//difference between start position and left edge of lane
     private float xMax = .3f;//difference between start position and right edge of lane
     private float yMin = .25f;
@@ -36,12 +36,19 @@ public class BowlingBall : MonoBehaviour
 
     void outOfBounds()
     {
-        if (transform.position.z < zMin | transform.position.z > zMax |
-            transform.position.y < yMin | transform.position.y > yMax |
-            transform.position.x < startPOS.x + xMin | transform.position.x > startPOS.x + xMax)
+        bool bminz = transform.position.z < zMin;
+        bool bmaxz = transform.position.z > zMax;
+        bool bminy = transform.position.y < yMin;
+        bool bmaxy = transform.position.y > yMax;
+        bool bminx = transform.position.x < startPOS.x + xMin;
+        bool bmaxx = transform.position.x > startPOS.x + xMax;
+
+        if (bminx|bmaxx|bminy|bmaxy|bminz|bmaxz)
         {
-            Debug.Log("moved " + transform.name + " to startPOS from " + transform.position);
             gameManager._ballCount--;
+
+            Debug.Log(transform.position + "xmin:"+bminx + "/xmax:" + bmaxx + ";ymin:" + bminy + "/ymax:" + bmaxy + ";zmin:" + bminz + "/zmax:" + bmaxz);
+            
             GameObject.Destroy(this);
             //transform.position = startPOS;
             

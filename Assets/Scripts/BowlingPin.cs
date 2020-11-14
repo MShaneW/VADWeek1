@@ -7,7 +7,9 @@ public class BowlingPin : MonoBehaviour
     public int _pinCount = 10;
     public int _pinsDown = 0;
     public bool _pinCounted = false;
-    
+
+    public GameManager gameManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +29,8 @@ public class BowlingPin : MonoBehaviour
         {
             if (!_pinCounted)
             {
-               _pinCount--;
+                gameManager._pinCount--;
+                _pinCount--;
                 _pinCounted = true;
             }
            
