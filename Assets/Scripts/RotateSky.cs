@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RotateSky : MonoBehaviour
 {
-    public float RotateSpeed = 1.2f;
+    public float RotateSpeed = 2.2f;
 
     void Update()
     {
