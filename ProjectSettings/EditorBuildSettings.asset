@@ -6,11 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: d1c3109bdb54ad54c8a2b2838528e640
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/VR_Bowling.unity
-    guid: b2f0c783b82098c4da28e6e381cbc412
+    path: Assets/Scenes/TrippinBalls.unity
+    guid: 7ad233af139833344b60c641b62d226d
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 895bf958c512c0d49bc4a28777462368,
       type: 2}

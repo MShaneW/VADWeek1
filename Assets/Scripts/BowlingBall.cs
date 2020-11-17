@@ -4,22 +4,23 @@ using UnityEngine;
 
 public class BowlingBall : MonoBehaviour
 {
-    private Vector3 startPOS; //record balls starting position
-    //private float xMin = -1.85f;//difference between start position and left edge of lane
-    //private float xMax = 10.85f;//.3f;//difference between start position and right edge of lane
-    private float yMin = -0.10f;
-    private float yMax = 4f;
-    private float zMin = -2.5f; 
-    private float zMax = 70f;
+    private Vector3 startPOS; //variable to hold ball's starting position 
+    //private float xMin = -1.85f;//difference between start position and left edge of lane ** nolonger needed with rotating lanes
+    //private float xMax = 10.85f;//.3f;//difference between start position and right edge of lane ** nolonger needed with rotating lanes
+    private float yMin = -0.10f; //ball fell below the floor
+    private float yMax = 4f; //ball went too high in the air
+    private float zMin = -2.5f; //ball rolled behiind the player
+    private float zMax = 70f; //ball left the end of the play field
     //public int _ballCount = 0;
 
-    public GameManager gameManager;
+    public GameManager gameManager; //reference to GameManager to set # balls remaining
 
     private void Awake()
     {
-        startPOS = transform.position;
-        Debug.Log(transform.position + transform.name);
+        startPOS = transform.position;  //Get the starting position
+        //Debug.Log(transform.position + transform.name);
     }
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -44,16 +45,14 @@ public class BowlingBall : MonoBehaviour
         if (bminy|bmaxy|bminz|bmaxz)
         {
             gameManager._ballCount--;
-             
-
-            Debug.Log(transform.position + 
-                "xmin:"+0 + "/xmax:" + 0 + 
-                ";ymin:" + bminy + "/ymax:" + bmaxy + 
-                ";zmin:" + bminz + "/zmax:" + bmaxz);
 
             Destroy(gameObject);
-            //transform.position = startPOS;
-            
+
+            //Debug.Log(transform.position + 
+            //    "xmin:"+0 + "/xmax:" + 0 + 
+            //    ";ymin:" + bminy + "/ymax:" + bmaxy + 
+            //    ";zmin:" + bminz + "/zmax:" + bmaxz);
+
         }
     }
 }
